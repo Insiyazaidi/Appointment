@@ -23,7 +23,7 @@ const App=()=>{
    <Route path="/about" element={<About/>}></Route>
   <Route path="/contact" element={<Contact/>}></Route>
     <Route path="/my-profile" element={<Myprofile/>}></Route>
-      <Route path="/my-appointment" element={<Myappointments/>}></Route>
+      <Route path="/my-appointments" element={<Myappointments/>}></Route>
        <Route path="/appointment/:docId" element={<Appointment/>}></Route>
 </Routes>
 </div>

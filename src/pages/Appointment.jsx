@@ -8,7 +8,7 @@ import Relateddoctors from '../Components/Relateddoctors'
 const Appointment = () => {
   const {docId } = useParams()
   console.log(docId)
-const daysofweek = ['SUN' , 'MON' , 'TUE' , 'WED' , 'THUR' , 'FRI' , 'SAT']
+const daysofweek = ['SUN' , 'MON' , 'TUE' , 'WED' , 'THUR' , 'FRI' ]
 const {doctors , currencysymbol} = useContext(AppContext)
 const [docinfo , Setdocinfo] = useState(null)
 const [docslots , Setdocslots]=useState([])

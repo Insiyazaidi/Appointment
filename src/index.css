@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -13,4 +13,10 @@
 }
 ::-webkit-scrollbar{
     @apply hidden
+}
+
+@media(max-width:740px){
+    .active p{
+        @apply text-white bg-primary
+    }
 }

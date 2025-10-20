@@ -8,7 +8,7 @@ import Relateddoctors from '../Components/Relateddoctors'
 const Appointment = () => {
   const {docId } = useParams()
   console.log(docId)
-const daysofweek = ['SUN' , 'MON' , 'TUE' , 'WED' , 'THUR' , 'FRI' ]
+const daysofweek = ['SUN' , 'MON' , 'TUE' , 'WED' , 'THUR' , 'FRI' , 'SAT' ]
 const {doctors , currencysymbol} = useContext(AppContext)
 const [docinfo , Setdocinfo] = useState(null)
 const [docslots , Setdocslots]=useState([])
@@ -116,7 +116,7 @@ useEffect(()=>{
 
 </div>
 
-<button className='bg-primary text-white text-sm font-light px-14 py-3 rounded-full mt-9'>Book an Appointment</button>
+<button className='bg-primary text-white text-sm font-light px-14 py-3 rounded-full mt-9'>Book an Appointment </button>
 </div>
 
 <Relateddoctors docId={docId} speciality={docinfo.speciality}/>

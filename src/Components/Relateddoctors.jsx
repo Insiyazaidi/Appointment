@@ -4,11 +4,13 @@ import { useNavigate } from 'react-router'
 
 const Relateddoctors = ({docId , speciality}) => {
     const {doctors} = useContext(AppContext)
-    const [reldoc , Setreldoc]= useState()
+    const [reldoc , Setreldoc]= useState([])
     const navigate = useNavigate()
+    console.log(docId)
     useEffect(()=>{
 if(doctors.length>0 && speciality){
-    const doctorsData = doctors.filter((doc)=>doc.speciality === speciality && doc._id !== doc.id)
+    const doctorsData = doctors.filter((doc)=>doc.speciality === speciality && doc._id !== docId)
+    console.log(doctorsData)
     Setreldoc(doctorsData)
 }
     } , [doctors , speciality , docId])
@@ -21,7 +23,7 @@ if(doctors.length>0 && speciality){
         <div className=' w-full grid grid-cols-auto gap-4 pt-5 gap-y-6 px-3 sm:px-0'>
             {
                 reldoc.slice(0,5).map((item , key)=>(
-<div key={key} onClick={()=>navigate(`/appointment/${item._id}`)} className='border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-500'>
+<div key={key} onClick={()=>{navigate(`/appointment/${item._id}`)  ; scrollTo(0,0)} } className='border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-500'>
     <img src={item.image} className='bg-blue-50'></img>
     <div className='p-4'>
         <div className='flex items-center gap-2 text-sm text-center text-green-500'>
@@ -36,7 +38,7 @@ if(doctors.length>0 && speciality){
                 ))
             }
         </div>
-        <button onClick={()=>{navigate("/doctors" ); scrollTo(0 ,0 )}} className='bg-blue-50 text-gray-600 px-12 py-3 rounded-full mt-10 '></button>
+        <button onClick={()=>{navigate("/doctors" ); scrollTo(0 ,0 )}} className='bg-blue-50 text-gray-600 px-12 py-3 rounded-full mt-10 '>More</button>
     </div>
 
 
